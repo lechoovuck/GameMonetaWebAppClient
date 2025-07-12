@@ -1,0 +1,36 @@
+.InputWrapper {
+}
+
+.InputWrapper__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--additional-text-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-family: var(--font-family);
+}
+
+.InputWrapper__description {
+  margin-top: 0.4rem;
+  color: var(--additional-text-color);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-family: var(--font-family);
+
+  a {
+    font-size: 0.8rem;
+  }
+}
+
+// ==========
+.InputWrapper__error {
+  .InputWrapper__label,
+  input {
+    outline-color: var(--red) !important;
+    color: var(--red);
+  }
+}

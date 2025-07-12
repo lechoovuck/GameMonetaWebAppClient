@@ -1,0 +1,66 @@
+.Field {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--additional-text-color);
+  line-height: 125%;
+
+  // & + & {
+  //   margin-top: 24px;
+  // }
+
+  @include breakpoint('sm') {
+  }
+}
+
+.Field_showInput {
+  border-color: transparent;
+}
+
+.Field__mainCol {
+  flex-grow: 1;
+
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
+
+.Field__value {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  color: var(--white);
+}
+
+.Field__editButton {
+  cursor: pointer;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+
+  &:hover {
+    color: var(--additional-text-color);
+  }
+}
+
+.Field__form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+
+  .Field__input {
+    flex-grow: 1;
+  }
+
+  button {
+    flex-shrink: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+  }
+}

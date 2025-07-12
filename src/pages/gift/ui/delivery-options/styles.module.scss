@@ -1,0 +1,12 @@
+.DeliveryOptions__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+
+  @include breakpoint('md') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.DeliveryOptions__section + .DeliveryOptions__section {
+}

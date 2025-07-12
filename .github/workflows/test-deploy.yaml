@@ -1,0 +1,45 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SECRET_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+
+      - name: Set up SSH for deployment
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_TEST_SSH_KEY }}" > ~/.ssh/github_key
+          chmod 600 ~/.ssh/github_key
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa ${{ secrets.SERVER_TEST_HOST }} >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/github_key
+
+      - name: Deploy to VPS
+        run: |
+          ssh -i ~/.ssh/github_key -o IdentitiesOnly=yes ${{ secrets.SERVER_TEST_USERNAME }}@${{ secrets.SERVER_TEST_HOST }} "whoami"
+          ssh -i ~/.ssh/github_key -o IdentitiesOnly=yes ${{ secrets.SERVER_TEST_USERNAME }}@${{ secrets.SERVER_TEST_HOST }} "mkdir -p /home/sadmin/GameMonetaWebAppClient/dist"
+          scp -i ~/.ssh/github_key -o IdentitiesOnly=yes -r dist/* ${{ secrets.SERVER_TEST_USERNAME }}@${{ secrets.SERVER_TEST_HOST }}:/home/sadmin/GameMonetaWebAppClient/dist

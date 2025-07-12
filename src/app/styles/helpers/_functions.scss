@@ -1,0 +1,12 @@
+// PX to REM
+// в переменных использовать так: --var: #{rem(10)};
+@function rem($px) {
+  $result: ($px / 16) + rem;
+  @return $result;
+}
+
+// PX to EM
+@function em($px) {
+  $result: ($px / 16) + em;
+  @return $result;
+}

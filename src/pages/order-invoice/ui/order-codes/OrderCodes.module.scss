@@ -1,0 +1,80 @@
+.OrderCodes {
+  margin-bottom: var(--space-md);
+  border-radius: var(--space-sm);
+  background: var(--additional-color);
+  padding: var(--space-md) var(--space-sm);
+  text-align: center;
+}
+
+.OrderCodes__header {
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  @include breakpoint('md') {
+    font-size: 1rem;
+  }
+}
+
+.OrderCodes__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0;
+  border-radius: calc(var(--space-sm) + 4px);
+  background-color: var(--background) !important;
+  padding: 4px;
+  padding-left: var(--space-sm);
+
+  code {
+    display: block;
+    position: relative;
+    flex-grow: 1;
+    height: 1em;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-family: var(--font-code);
+
+    span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+
+      @include text-truncate();
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  @include breakpoint('md') {
+    code {
+      font-size: 1rem;
+      font-family: var(--font-code);
+    }
+  }
+}
+
+.CopyButton {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+}
+.CopyButton__status {
+  padding: 0 var(--space-sm);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.OrderCodes__showCodeButton {
+  margin-top: var(--space-md);
+}

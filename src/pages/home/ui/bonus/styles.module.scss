@@ -1,0 +1,47 @@
+.Bonus {
+  @include container();
+  height: auto !important;
+  padding: var(--space-md) 0;
+  --horizontal-padding: var(--space-md);
+  padding-right: var(--horizontal-padding);
+  padding-left: var(--horizontal-padding);
+  margin-top: var(--space-l);
+}
+
+.Bonus__container {
+  width: 100%;
+  height: 100%;
+}
+
+.Bonus__image {
+  border-radius: var(--space-sm);
+
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 175px;
+
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.Bonus__desc {
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+  z-index: 2;
+  background: linear-gradient(-90deg, rgba(#000, 0.8) 20%, transparent);
+  padding: 1.5rem 1.5rem;
+  width: 50%;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1.5rem;
+  text-align: right;
+  text-shadow: 1px 1px 2px #000;
+}

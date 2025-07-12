@@ -1,0 +1,61 @@
+.Item {
+  border-radius: var(--space-sm);
+  background: var(--additional-color, #21212c);
+
+  & + & {
+    margin-top: var(--space-sm);
+  }
+}
+
+.Item__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  padding: var(--space-md);
+
+  b {
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  &:hover b {
+  }
+}
+
+.Item__ChevronIcon {
+  flex-shrink: 0;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  color: var(--green);
+}
+
+.Item__answer {
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--additional-text-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: var(--space-md);
+  font-family: Inter;
+
+  ul {
+    margin-bottom: 1rem;
+    padding-left: var(--space-md);
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.Item_active {
+  .Item__question {
+    // padding-bottom: 0.5rem;
+  }
+  .Item__ChevronIcon {
+    transform: rotate(0);
+  }
+}

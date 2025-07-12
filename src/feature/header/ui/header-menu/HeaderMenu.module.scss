@@ -1,0 +1,39 @@
+.HeaderMenu {
+  position: absolute;
+  top: 100%;
+  right: var(--space-md);
+  left: var(--space-md);
+  z-index: 1000;
+  animation: openModal var(--transition-timing);
+  animation-iteration-count: 1;
+  height: calc(100dvh - 100% - var(--space-md));
+
+  @include breakpoint('sm') {
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    padding: var(--space-md);
+    height: calc(100dvh - 100%);
+  }
+}
+
+.HeaderMenu__button {
+  display: none;
+  position: relative;
+  z-index: 1000;
+
+  @include breakpoint('md') {
+    display: inline-flex;
+  }
+}
+
+@keyframes openModal {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

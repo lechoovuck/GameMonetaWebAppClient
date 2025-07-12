@@ -1,0 +1,33 @@
+.ButtonsGroup {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  border-radius: calc(var(--space-sm) + 4px);
+  background: var(--background);
+  padding: 4px;
+}
+
+.Button {
+  flex-grow: 1;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--space-sm);
+  background: transparent;
+  padding: var(--space-sm) var(--space-md);
+
+  color: var(--white);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  font-family: var(--font-family);
+
+  &[data-active='true'] {
+    background: var(--green);
+    color: #fff;
+  }
+
+  @include breakpoint('sm') {
+    font-size: 0.8rem;
+  }
+}

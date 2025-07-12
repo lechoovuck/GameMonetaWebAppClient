@@ -1,0 +1,159 @@
+$collapsed-height: 7.5em;
+
+.InfiniteScroll {
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.InfiniteScroll__Grid {
+  --horizontal-padding: var(--space-md);
+  padding: var(--horizontal-padding);
+  max-width: calc(61.5rem + var(--space-md) * 2);
+  max-height: $collapsed-height;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  width: 100%;
+  overflow-y: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    box-shadow: inset 0 30px 10px -10px var(--background);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    box-shadow: inset 0 -30px 10px -10px var(--background);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  &.expanded {
+    max-height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background-secondary);
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--background-secondary);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color-hover);
+    }
+  }
+
+  @include breakpoint('md') {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  @include breakpoint('sm') {
+    --horizontal-padding: var(--space-sm);
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}
+
+.InfiniteScroll__GridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover .GridItem__Image {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &:hover .GridItem__Name {
+    transform: scale(1.03);
+  }
+}
+
+.GridItem__Image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2;
+  border-radius: 8px;
+  transition: all 0.1s ease;
+}
+
+.GridItem__Name {
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.1s ease;
+  line-height: 100%;
+}
+
+.InfiniteScroll__ExpandControl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  position: relative;
+}
+
+.ExpandControl__ExpandArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  background-color: var(--additional-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  position: relative;
+  transform: rotate(90deg);
+
+  &:hover {
+    background-color: darkgrey;
+  }
+}
+
+.ExpandArrow__Up {
+  transform: rotate(-90deg);
+  margin-bottom: 0.5em;
+}

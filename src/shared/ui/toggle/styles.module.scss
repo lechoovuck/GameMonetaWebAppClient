@@ -1,0 +1,84 @@
+$animation_time: 0.2s;
+
+.Toggle {
+  --width: 2.75rem;
+  --height: 1.5rem;
+  --padding: 0.125rem;
+  --bth-size: calc(var(--height) - (var(--padding) * 2));
+  //
+  --bg-active: var(--green);
+  --bg-inactive: var(--additional-text-color);
+  --button-active: var(--white-night);
+  --button-inactive: var(--white-night);
+  --color-active: var(--green);
+  --color-inactive: var(--additional-text-color-night);
+
+  position: relative;
+  flex-shrink: 0;
+  transition: background $animation_time;
+  cursor: pointer;
+  border-radius: calc(var(--height) / 2);
+  background: var(--bg-inactive);
+  padding: 0.125rem;
+  width: var(--width);
+  height: var(--height);
+}
+
+.Toggle__button {
+  display: flex;
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.06))
+    drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1));
+  transition: all $animation_time;
+  margin: 0;
+  border-radius: 50%;
+  background-color: var(--button-inactive);
+  padding: 2px;
+  width: var(--bth-size);
+  height: var(--bth-size);
+  color: var(--color-inactive);
+
+  svg {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.Toggle__container {
+  display: flex;
+  align-items: center;
+}
+
+.Toggle__label {
+  cursor: default;
+  padding-left: 0.5rem;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  font-family: var(--font-family);
+}
+
+.Toggle_active {
+  justify-content: flex-end;
+  background: var(--bg-active);
+
+  .Toggle__button {
+    left: calc(var(--width) - var(--bth-size) - var(--padding));
+    background-color: var(--button-active);
+    color: var(--color-active);
+  }
+}
+
+.Toggle_size {
+  &_sm {
+    --width: 2.25rem;
+    --height: 1.25rem;
+  }
+}

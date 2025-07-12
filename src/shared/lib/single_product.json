@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "data": {
+    "product_id": 1,
+    "category": "game",
+    "title": "Steam",
+    "description": "Пополнение Steam баланса, подходит для СНГ аккаунтов",
+    "options": [
+      {
+        "option_name": "deposit",
+        "type": "deposit",
+        "title": "Сумма пополнения",
+        "cols": null,
+        "default_value": {
+          "value": 1,
+          "label": "test"
+        },
+        "label": "",
+        "icon": null,
+        "item": {
+          "name": "deposit",
+          "label": "Сумма в Рублях",
+          "value": 100,
+          "price": 111,
+          "type": null,
+          "tooltip": "",
+          "description": "",
+          "min": 1,
+          "max": 10000
+        }
+      },
+      {
+        "option_name": "login",
+        "type": "input_text",
+        "title": "Логин аккаунта",
+        "cols": null,
+        "default_value": {
+          "value": 1,
+          "label": "test"
+        },
+        "label": "",
+        "icon": null,
+        "item": {
+          "name": "login",
+          "label": "Где найти логин?",
+          "value": "",
+          "price": 111,
+          "type": null,
+          "tooltip": "вот здесь",
+          "description": "fw",
+          "min": 1,
+          "max": 555
+        }
+      },
+      {
+        "option_name": "email",
+        "type": "input_email",
+        "title": "Ваш E-Mail",
+        "cols": null,
+        "default_value": {
+          "value": 1,
+          "label": "test"
+        },
+        "label": null,
+        "icon": null,
+        "item": {
+          "name": "email",
+          "label": "Email",
+          "value": "",
+          "price": 1,
+          "type": null,
+          "tooltip": null,
+          "description": null,
+          "min": null,
+          "max": null
+        }
+      }
+    ],
+    "options_text": "",
+    "delivery_inputs": []
+  }
+}

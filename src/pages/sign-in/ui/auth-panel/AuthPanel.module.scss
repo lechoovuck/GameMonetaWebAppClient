@@ -1,0 +1,54 @@
+.AuthPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.AuthPanel__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: calc(var(--space-md) + var(--space-sm)) var(--space-md);
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.AuthPanel__buttons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-sm);
+
+  @include breakpoint('sm') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.AuthPanel__notHaveAccount {
+  color: var(--additional-text-color-night, #7f7f90);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: unset;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.AuthPanel__error {
+  outline-color: var(--red) !important;
+  color: var(--red);
+}
+
+
+.AuthPanel__passwordResponse {
+  color:  var(--green);
+}
+
+
+.AuthPanel__passwordResponseInvalid {
+  color:  var(--red);
+}

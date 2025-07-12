@@ -1,0 +1,88 @@
+/**
+=====================
+Система брейкпоинтов для адаптивного дизайна
+=====================
+*/
+@use 'sass:map';
+
+$grid-breakpoints: (
+  xs: 0px,
+  sm: 430px,
+  // 375
+  md: 744px,
+  lg: 1032px,
+  xl: 992px,
+  xxl: 1170px,
+);
+
+@mixin breakpoint($point) {
+  @if map-has-key($grid-breakpoints, $point) {
+    @media (max-width: map.get($grid-breakpoints, $point)) {
+      @content;
+    }
+  } @else if $point {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+
+/**
+Миксин для работы с темой
+=====================
+По умолчанию все верстаем в темной теме и где надо используем этот миксин.
+По умочанию основные цвета подменяются на более низком уровне, миксин создан на всякий случай.
+=====================
+
+@include dayTheme {
+	color: red;
+}
+*/
+@mixin dayTheme() {
+  [data-theme='day'] & {
+    @content;
+  }
+}
+
+/**
+Миксин который ограничивает размер по ширине
+и центрует блок
+*/
+@mixin container() {
+  --horizontal-padding: var(--space-md);
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--horizontal-padding);
+  padding-left: var(--horizontal-padding);
+  width: 100%;
+  max-width: calc(61.5rem + var(--space-md) * 2);
+
+  @include breakpoint('sm') {
+    --horizontal-padding: var(--space-sm);
+  }
+}
+
+/* Ховер для мобильных устройств */
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  &:active {
+    @content;
+  }
+}
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin transition($args...) {
+  transition-duration: 0.1s;
+  transition-property: $args;
+  transition-timing-function: ease-out;
+}

@@ -1,0 +1,10 @@
+.Profile {
+  h3 {
+    margin-bottom: var(--space-md);
+  }
+
+  @include breakpoint('sm') {
+    border-radius: 0;
+    padding: var(--space-md) var(--space-sm);
+  }
+}

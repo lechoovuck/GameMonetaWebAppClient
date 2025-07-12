@@ -1,0 +1,48 @@
+.SelectNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 3px;
+  border: 1px solid var(--additional-text-color);
+  border-radius: var(--space-sm);
+  background: var(--background);
+  padding: 2px;
+  height: 2.5rem;
+
+    //
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+  @include breakpoint('md') {
+    justify-self: none;
+    width: 100%;
+  }
+
+  button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 6px;
+    aspect-ratio: 1 /1;
+    width: auto;
+    height: 100%;
+
+    &:not(:hover) {
+      background: transparent;
+    }
+  }
+}
+
+.SelectNumber__value {
+  border-right: 1px solid var(--additional-text-color);
+  border-left: 1px solid var(--additional-text-color);
+  padding: 0.25rem 1rem;
+  width: 100%;
+  min-width: 60px;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-align: center;
+}

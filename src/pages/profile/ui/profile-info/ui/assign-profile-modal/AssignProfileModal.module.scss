@@ -1,0 +1,23 @@
+.AssignProfileModal {
+	
+}
+
+.AssignProfileModal__message_text {
+    text-align: center;
+    margin-top: 1rem;
+
+    &.success {
+        color: var(--green);
+    }
+    
+    &.error {
+        color: var(--red);
+    }
+}
+
+.AssignProfileModal__progress_bar {
+    height: 5px;
+    background: #d19736;
+    margin-top: 10px;
+    transition: width 20ms linear;
+}

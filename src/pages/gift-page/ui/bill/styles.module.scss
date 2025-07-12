@@ -1,0 +1,36 @@
+.Bill__list {
+  margin: 0;
+  margin-bottom: var(--space-md);
+  padding: 0;
+  list-style: none;
+
+  li + li {
+    border-top: 1px solid var(--additional-text-color);
+  }
+}
+
+.Bill__list li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.2;
+
+  b {
+    color: var(--white);
+  }
+  span {
+    color: var(--additional-text-color);
+    font-weight: 500;
+    text-align: right;
+    display: flex;
+    gap: 1rem,;
+    align-items: center;
+  }
+}
+
+.Bill__button {
+  width: 100%;
+}

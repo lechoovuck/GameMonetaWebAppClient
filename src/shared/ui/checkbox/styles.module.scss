@@ -1,0 +1,90 @@
+.Checkbox__body {
+  display: flex;
+  align-items: center;
+}
+
+.Checkbox {
+  --size: 1.5rem;
+  --border-color: var(--additional-text-color);
+  --bg-color: transparent;
+  --icon-color: var(--white);
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+  background-color: var(--bg-color);
+  padding: 1px;
+  width: var(--size);
+  height: var(--size);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: var(--icon-color);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      --bg-color: var(--background);
+    }
+  }
+
+  &_size_sm {
+    --size: 1.125rem;
+    border-radius: 0.35rem;
+    padding: 0;
+  }
+}
+
+.Checkbox_disabled {
+  --bg-color: #818181;
+  cursor: no-drop;
+
+  @media (hover: hover) {
+    &:hover {
+      --bg-color: #818181;
+    }
+  }
+}
+
+.Checkbox_selected {
+  --border-color: transparent;
+  --bg-color: var(--green);
+  --icon-color: #fff;
+
+  @media (hover: hover) {
+    &:hover {
+      --border-color: transparent;
+      --bg-color: var(--green);
+      --icon-color: #fff;
+    }
+  }
+}
+
+.Checkbox_disabled.Checkbox_selected {
+  --bg-color: #818181;
+  @media (hover: hover) {
+    &:hover {
+      --bg-color: #818181;
+    }
+  }
+}
+
+// =========
+
+.Checkbox__label {
+  //   padding-top: 3px;
+  padding-left: 0.5rem;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-family: 'Roboto', sans-serif;
+
+  &_disabled {
+    cursor: no-drop;
+    color: #818181;
+  }
+}

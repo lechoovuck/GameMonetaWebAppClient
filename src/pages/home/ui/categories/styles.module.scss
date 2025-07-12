@@ -1,0 +1,70 @@
+.Categories {
+}
+
+.Categories__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  h2 {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  @include breakpoint('md') {
+    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding-right: var(--space-md);
+    button {
+      display: flex;
+    }
+  }
+  @include breakpoint('sm') {
+    padding-right: 0;
+    button {
+      display: none;
+    }
+  }
+}
+
+
+.Categories__buttons {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  @include breakpoint('md') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    svg {
+      display: none;
+    }
+    button {
+      line-height: 1;
+    }
+  }
+
+  @include breakpoint('sm') {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+.Categories__products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+
+  @include breakpoint('md') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    row-gap: var(--space-md);
+  }
+  @include breakpoint('sm') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    row-gap: 0.75rem;
+  }
+}

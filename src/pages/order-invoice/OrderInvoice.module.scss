@@ -1,0 +1,63 @@
+.Invoice__container {
+  @include container();
+
+  --horizontal-padding: var(--space-md);
+  padding-right: var(--horizontal-padding);
+  padding-left: var(--horizontal-padding);
+  margin-top: var(--space-l);
+}
+
+.Invoice__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+
+  h3 {
+    flex-grow: 100;
+  }
+
+  @include breakpoint('sm') {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}
+
+.Invoice__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.Invoice__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+
+  label {
+    display: block;
+    color: var(--additional-text-color);
+  }
+
+  p {
+    white-space: pre-wrap;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+  }
+
+  .wait, .paid, .canceled, .refunded, .process {
+    color: var(--yellow)
+  }
+
+  .order_ok {
+    color: var(--green)
+  }
+
+  .error, .order_error {
+    color: var(--red)
+  }
+}

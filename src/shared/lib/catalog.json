@@ -1,0 +1,11 @@
+{
+    "success": true,
+    "products": [
+        {
+            "product_id": 1,
+            "category": "game",
+            "title": "Steam",
+            "description": "Пополнение Steam баланса, подходит для СНГ аккаунтов"
+        }
+    ]
+}

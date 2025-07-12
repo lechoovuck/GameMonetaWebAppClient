@@ -1,0 +1,39 @@
+.Logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    opacity: 0.9;
+    margin-right: 0.5rem;
+    width: auto;
+    height: 3rem;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint('md') {
+    img {
+      margin-right: 0.25rem;
+      width: auto;
+      height: 1.6rem;
+    }
+  }
+}
+
+.Logo__name {
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-family: var(--font-family);
+
+  @include breakpoint('md') {
+    font-size: 1.2rem;
+  }
+}

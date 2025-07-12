@@ -1,0 +1,79 @@
+.Header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-md);
+  margin-bottom: 2rem;
+  padding: var(--space-md) 0;
+
+  @include container();
+
+  @include breakpoint('md') {
+    gap: 1rem;
+    margin-bottom: var(--space-lg);
+  }
+  @include breakpoint('sm') {
+    margin-bottom: var(--space-md);
+  }
+}
+
+.Header__logo {
+  z-index: 1000;
+  margin-right: auto;
+
+  @include breakpoint('sm') {
+    h3 {
+      display: none;
+    }
+  }
+
+  // @include breakpoint('md') {
+  //   justify-content: center;
+  //   order: 2;
+  //   width: 100%;
+  // }
+}
+
+.Header__bonus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  line-height: 1;
+
+  span {
+    display: inline-block;
+    width: 24px;
+  }
+
+  // @include breakpoint('md') {
+  //   display: none;
+  // }
+}
+
+.Header__buttons {
+  display: flex;
+  gap: var(--space-sm);
+
+  @include breakpoint('md') {
+    order: 2;
+    gap: calc(var(--space-sm) / 2);
+  }
+}
+
+// .Header__btnMenu {
+//   display: none;
+
+//   @include breakpoint('md') {
+//     display: inline-flex;
+//   }
+//   @include breakpoint('sm') {
+//     display: inline-flex;
+//   }
+// }
+
+.Header__themeToggle {
+  @include breakpoint('md') {
+    order: 1;
+  }
+}

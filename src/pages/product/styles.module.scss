@@ -1,0 +1,29 @@
+.ProductPage {
+  @include container();
+}
+
+.ProductPage__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+
+  @include breakpoint('lg') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ProductPage__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  @include breakpoint('lg') {
+    margin: 0 auto;
+    margin-top: var(--space-md);
+    width: 100%;
+    max-width: 680px;
+  }
+  @include breakpoint('md') {
+    margin-top: var(--space-md);
+  }
+}

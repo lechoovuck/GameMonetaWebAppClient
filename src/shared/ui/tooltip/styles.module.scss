@@ -1,0 +1,43 @@
+.Tooltip {
+  border-radius: 0.5rem !important;
+  background: var(--background) !important;
+  padding: var(--space-sm) !important;
+  max-width: 19rem;
+
+  p {
+    margin: 0;
+    color: var(--white);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    font-family: Inter;
+  }
+}
+
+.Tooltip__title {
+  margin-bottom: 0.25rem;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-family: Inter;
+}
+
+.Tooltip__icon {
+  display: inline-block;
+  position: relative;
+  //   bottom: -2px;
+  top: -1px;
+  vertical-align: top;
+  cursor: help;
+  width: 16px;
+  height: 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: var(--additional-text-color);
+  }
+}

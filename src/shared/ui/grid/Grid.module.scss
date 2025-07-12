@@ -1,0 +1,13 @@
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols-lg), 1fr);
+  gap: var(--space-sm);
+
+  @include breakpoint('md') {
+    grid-template-columns: repeat(var(--cols-md), 1fr);
+  }
+
+  @include breakpoint('sm') {
+    grid-template-columns: repeat(var(--cols-sm), 1fr);
+  }
+}

@@ -1,0 +1,13 @@
+.CopyStatus {
+  display: inline;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.CopyStatus__succes {
+  color: var(--green);
+}
+
+.CopyStatus__error {
+  color: var(--red);
+}

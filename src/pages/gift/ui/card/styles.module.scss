@@ -1,0 +1,90 @@
+.Card {
+  @include container();
+  padding: 0;
+
+  position: sticky;
+  top: var(--space-md);
+
+  @include breakpoint('lg') {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    gap: var(--space-md);
+    max-width: 680px;
+    width: 100%;
+  }
+  @include breakpoint('md') {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.Card__cover {
+  position: relative;
+  margin-bottom: var(--space-md);
+  background-color: var(--additional-color);
+  padding-bottom: 50%;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    border-radius: var(--space-sm);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include breakpoint('lg') {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint('md') {
+    margin-bottom: var(--space-md);
+  }
+}
+
+.Card__cover_gift {
+  @extend .Card__cover;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(white, 0);
+  width: 100%;
+
+  img{
+    position: relative;
+    height: auto;
+    overflow: auto;
+  }
+
+}
+
+
+.Card__title {
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1;
+
+  @include breakpoint('lg') {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint('md') {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.Card__description {
+  // position: absolute;
+  // width: 1px;
+  // height: 1px;
+  // padding: 0;
+  // margin: -1px;
+  // overflow: hidden;
+  // clip: rect(0, 0, 0, 0);
+  // border: 0;
+}

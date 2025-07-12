@@ -1,0 +1,18 @@
+.Group {
+}
+
+.Group__title {
+  margin-bottom: var(--space-md);
+  color: var(--additional-text-color);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-family: var(--font-secondary);
+}
+
+.Group__body {
+  display: flex;
+  flex-direction: column;
+  // gap: calc(var(--space-md) * 2);
+}

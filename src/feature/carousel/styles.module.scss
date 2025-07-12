@@ -1,0 +1,115 @@
+.Carousel {
+  --horizontal-padding: var(--space-md);
+
+  margin-bottom: 6rem;
+
+  padding-right: var(--horizontal-padding);
+  padding-left: var(--horizontal-padding);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint('md') {
+    --horizontal-padding: var(--space-sm);
+    margin-bottom: 5.5rem;
+  }
+
+  @include breakpoint('sm') {
+    --horizontal-padding: var(--space-sm);
+    margin-bottom: 3.5rem;
+  }
+}
+
+.Carousel__slides {
+  position: relative;
+  margin: 0 auto;
+  aspect-ratio: 2.56;
+  max-width: 68.5rem;
+
+  @include breakpoint('sm') {
+    width: 100%;
+  }
+}
+
+.Carousel__mainSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform, opacity, scale;
+}
+
+.Carousel__backSlide {
+  position: absolute;
+  top: 11%;
+  opacity: 0.5;
+  //   filter: grayscale(1);
+  width: 78%;
+  will-change: transform, opacity, scale;
+
+  a {
+    cursor: default;
+  }
+
+  &_prev {
+    right: calc(100% + 1.5rem);
+  }
+
+  &_next {
+    left: calc(100% + 1.5rem);
+  }
+
+  @include breakpoint('md') {
+    &_prev {
+      right: calc(100% + var(--space-sm));
+    }
+
+    &_next {
+      left: calc(100% + var(--space-sm));
+    }
+  }
+}
+
+.Carousel__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+
+  @include breakpoint('sm') {
+    display: none;
+  }
+}
+
+.Carousel__navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--green);
+  }
+}
+
+.Carousel__points {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.Carousel__point {
+  cursor: pointer;
+  border-radius: 1px;
+  background: var(--additional-color);
+  width: 1.625rem;
+  height: 0.3125rem;
+
+  &_active {
+    background: var(--green, #2c8c60);
+  }
+}

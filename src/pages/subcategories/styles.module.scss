@@ -1,0 +1,43 @@
+.SubcategoriesPage {
+  @include container();
+}
+
+.ProductPage__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+
+  @include breakpoint('lg') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.Subcategories__block {
+  margin-bottom: 3rem;
+  background-color: var(--additional-color, #21212c);
+  border-radius: 1rem;
+  padding: 1rem;
+
+  h3 {
+    margin-bottom: var(--space-md);
+    margin-top: 0;
+  }
+}
+
+.Subcategories__products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+
+  @include breakpoint('md') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    row-gap: var(--space-md);
+  }
+  @include breakpoint('sm') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    row-gap: 0.75rem;
+  }
+}
+

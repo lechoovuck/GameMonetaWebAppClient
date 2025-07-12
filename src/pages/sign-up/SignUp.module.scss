@@ -1,0 +1,11 @@
+.SignUp {
+  @include container();
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+
+  @include breakpoint('md') {
+    grid-template-columns: 1fr;
+  }
+}

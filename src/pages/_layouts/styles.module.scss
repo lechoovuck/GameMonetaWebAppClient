@@ -1,0 +1,105 @@
+.BaseLayout__loader {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  @include container();
+}
+
+.GlobalFaq {
+  margin-top: var(--space-md);
+  @include container();
+}
+
+.ContentLayout {
+  @include container();
+  --list-padding: 0.6rem;
+
+  @include breakpoint('md') {
+    --list-padding: 0.2rem;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-top: 1em;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    padding-left: var(--list-padding);
+  }
+
+  ol {
+    padding-left: var(--list-padding);
+    list-style-type: none;
+    counter-reset: item;
+
+    li {
+      display: table;
+      counter-increment: item;
+
+      &:before {
+        content: counters(item, ".") ". ";
+        display: table-cell;
+        padding-right: var(--list-padding);
+      }
+
+      li {
+
+        &:before {
+          content: counters(item, ".") " ";
+        }
+      }
+    }
+  }
+
+  li {
+    font-weight: 400;
+    line-height: 1.6rem;
+    margin: 0.4rem 0;
+  }
+
+
+  img {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.PrivateLayout {
+  @include container();
+
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  align-items: start;
+  gap: var(--space-md);
+
+  @include breakpoint('lg') {
+    grid-template-columns: 16rem 1fr;
+  }
+
+  @include breakpoint('md') {
+    grid-template-columns: 1fr;
+  }
+
+  @include breakpoint('sm') {
+    --horizontal-padding: 0px;
+  }
+}
+
+.PrivateLayout__navBar {
+  min-height: 30rem;
+
+  @include breakpoint('md') {
+    display: none;
+  }
+}

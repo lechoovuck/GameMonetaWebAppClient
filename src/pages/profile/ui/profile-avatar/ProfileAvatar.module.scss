@@ -1,0 +1,62 @@
+.ProfileAvatar {
+  display: flex;
+  gap: var(--space-md);
+
+  @include breakpoint('md') {
+    gap: var(--space-sm);
+  }
+  @include breakpoint('sm') {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
+
+.ProfileAvatar__image {
+  border-radius: var(--space-sm);
+  width: 8rem;
+  height: 8rem;
+
+  @include breakpoint('md') {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.ProfileAvatar__col2 {
+  display: flex;
+  flex-grow: 1;
+  gap: inherit;
+
+  @include breakpoint('md') {
+    flex-grow: 0;
+    flex-direction: column;
+    margin-left: auto;
+  }
+  @include breakpoint('sm') {
+    margin-left: unset;
+  }
+}
+
+.ProfileAvatar__sizeRecomendation {
+  color: var(--additional-text-color);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.ProfileAvatar__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-left: auto;
+
+  @include breakpoint('md') {
+    flex-direction: row;
+    margin-left: unset;
+  }
+
+  @include breakpoint('sm') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}

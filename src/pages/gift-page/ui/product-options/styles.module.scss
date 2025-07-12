@@ -1,0 +1,50 @@
+.ProductOptions {
+}
+
+.ProductOptions__groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductOptions__group + .ProductOptions__group {
+  margin-top: 1.5rem;
+  border-top: 1px dashed var(--additional-text-color);
+  padding-top: 1.5rem;
+}
+
+.ProductOptions__section {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), 1fr);
+  // мне кажется можно просто всегда сделать 2 колонки по умолчанию
+  // но очень большой шанс что иногда надо будет делать только 1 колонку
+  // например для чекбокса с длинным текстом
+  // grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+
+  @include breakpoint('md') {
+    grid-template-columns: 1fr;
+    // можно уменьшать кол-во колонок на 1
+    // grid-template-columns: repeat(max(calc(var(--cols, 1) - 1), 1), 1fr);
+    gap: 0.5rem;
+  }
+
+  @include breakpoint('sm') {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
+
+.ProductOptions__sectionCheckbox {
+  @include breakpoint('md') {
+    row-gap: var(--space-sm);
+  }
+}
+
+.ProductOptions__description {
+  margin-top: 1.5rem;
+  border-top: 1px dashed var(--additional-text-color);
+  padding-top: 1.5rem;
+  color: var(--additional-text-color);
+  font-weight: 400;
+  font-size: 0.85rem;
+}

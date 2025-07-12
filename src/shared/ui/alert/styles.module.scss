@@ -1,0 +1,30 @@
+.Alert {
+  //
+  border: 2px dashed var(--additional-text-color);
+  border-radius: 12px;
+  background-color: var(--additional-color);
+  padding: 16px 32px;
+  color: var(--additional-text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+}
+
+.Alert_color {
+  &_yellow {
+    border-color: var(--yellow);
+    background-color: #111003;
+    color: var(--yellow);
+  }
+  &_red {
+    border-color: var(--red);
+    background-color: #1c1010;
+    color: var(--red);
+  }
+  &_green {
+    border-color: var(--green);
+    background-color: #101c16;
+    color: var(--green);
+  }
+}

@@ -1,0 +1,18 @@
+.NavigationPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.NavigationPanel__bonus {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  // align-items: center;
+}
+
+.NavigationPanel__bonusContainer {
+  // h4 {
+  //   margin-bottom: 0;
+  // }
+}

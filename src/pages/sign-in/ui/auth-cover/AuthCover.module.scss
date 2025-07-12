@@ -1,0 +1,14 @@
+.AuthCover {
+  position: relative;
+
+  img {
+    position: absolute;
+    border-radius: var(--space-sm);
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @include breakpoint('md') {
+    display: none;
+  }
+}

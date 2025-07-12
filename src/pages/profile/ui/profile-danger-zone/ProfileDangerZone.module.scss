@@ -1,0 +1,14 @@
+.ProfileDangerZone {
+}
+
+.ProfileDangerZone__list {
+  border: 2px dashed var(--red);
+  border-radius: var(--space-sm);
+  padding-bottom: 0;
+
+  .Group__title {
+    border: none;
+    padding: 0;
+    color: var(--red);
+  }
+}

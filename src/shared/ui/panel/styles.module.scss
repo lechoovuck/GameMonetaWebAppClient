@@ -1,0 +1,26 @@
+.Panel {
+  border-radius: var(--space-sm);
+  background: var(--additional-color, #21212c);
+  padding: var(--space-md);
+
+  @include breakpoint('sm') {
+    padding: var(--space-sm);
+  }
+}
+
+.Panel__title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: var(--space-md);
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  font-family: var(--font-family);
+
+  &:not(:first-child) {
+    margin-top: var(--space-md);
+  }
+}

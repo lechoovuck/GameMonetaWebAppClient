@@ -1,0 +1,65 @@
+.RadioButton {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--space-sm);
+  background: var(--background);
+  padding: 0.2rem 1.13rem;
+  min-height: 2.6rem;
+  color: var(--white);
+
+  @media (hover: hover) {
+    &:not(.RadioButton_selected):hover {
+      color: var(--green);
+    }
+  }
+
+  &:active {
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: none;
+    pointer-events: none;
+  }
+}
+
+.RadioButton_selected {
+  background: var(--green);
+  color: var(--white);
+
+  @include dayTheme {
+    color: var(--white-night);
+  }
+}
+
+.RadioButton__icon {
+  flex-shrink: 0;
+  margin-left: -0.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
+
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.RadioButton__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}

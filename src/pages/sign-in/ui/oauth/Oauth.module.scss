@@ -1,0 +1,34 @@
+.Oauth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--additional-text-color-night, #7f7f90);
+
+  svg {
+    fill: currentColor !important;
+  }
+}
+
+.Oauth__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  .Oauth__column__button {
+    background: var(--additional-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: var(--space-md);
+    border-radius: var(--space-sm);
+    cursor: pointer;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.001);
+    }
+  }
+}
